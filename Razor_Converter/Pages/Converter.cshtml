@@ -1,0 +1,41 @@
+﻿@page
+@model Razor_Converter.Pages.ConverterModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Example</title>
+</head>
+<body>
+    <h1>Форма для конвертирования</h1>
+    <!-- форма вычисления конвертации -->
+    @*
+    Тонна — 106 (1 000 000) граммов, или 1000 килограммов.
+    Центнер — 105 (100 000) граммов, или 100 килограммов.
+    Карат — 0,2 грамма.
+    Шекель = 14 г
+    фунт — 453,59237 г (точное и официальное значение)
+    *@
+    <form method="post" action="Converter">
+        <label for="Value">Грамм: </label>
+        <input id="Value" name="number" type="number" min="0"  value="@Model.Value" />
+
+        <button>Посчитать</button>
+        <p></p>
+       
+    </form>
+
+    <!-- вывод ответа -->
+    @if (Model.Value != null || Model.Value2 != null || Model.Value3 != null ||
+         Model.Value4 != null || Model.Value5 != null)
+    {
+        <p>Центнер: @Model.Value2</p>
+         <p>Карат: @Model.Value3</p>
+        <p>Шекель: @Model.Value4</p>
+        <p>Фунт: @Model.Value5</p>
+        
+    }
+</body>
