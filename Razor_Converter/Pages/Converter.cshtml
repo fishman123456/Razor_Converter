@@ -21,21 +21,31 @@
     *@
     <form method="post" action="Converter">
         <label for="Value">Грамм: </label>
-        <input id="Value" name="number" type="number" min="0"  value="@Model.Value" />
-
+        <input id="Value" name="number" type="number" min="0" value="@Model.Value" />
+        <select name="numberSel">
+            <option value="">Выберите из чего конвертировать</option>
+            <option value="Тонна">Тонна</option>
+            <option value="Центнер">Центнер</option>
+            <option value="Карат">Карат</option>
+            <option value="Шекель">Шекель</option>
+            <option value="Фунт">Фунт</option>
+        </select>
         <button>Посчитать</button>
         <p></p>
-        
-    </form>
 
+    </form>
+    @if (Model.numberSel == "Тонна")
+    {
+        <label for="Value">Тонна: </label>
+    }
     <!-- вывод ответа -->
     @if (Model.Value != null || Model.Value2 != null || Model.Value3 != null ||
-         Model.Value4 != null || Model.Value5 != null)
+    Model.Value4 != null || Model.Value5 != null)
     {
         <p>Центнер: @Model.Value2</p>
-         <p>Карат: @Model.Value3</p>
+        <p>Карат: @Model.Value3</p>
         <p>Шекель: @Model.Value4</p>
         <p>Фунт: @Model.Value5</p>
-        
+
     }
 </body>
