@@ -20,10 +20,10 @@
     фунт — 453,59237 г (точное и официальное значение)
     *@
     <form method="post" action="Converter">
-        <label for="Value">Грамм: </label>
-        <input id="Value" name="number" type="number" min="0" value="@Model.Value" />
+        <label for="Value">Значение выпадающего списка </label>
+        <input id="Value" name="number" type="number" min="0" value="@Model.numberSel" />
         <select name="numberSel">
-            <option value="">Выберите из чего конвертировать</option>
+            <option value="">Конвертация из грамм</option>
             <option value="Тонна">Тонна</option>
             <option value="Центнер">Центнер</option>
             <option value="Карат">Карат</option>
@@ -34,18 +34,16 @@
         <p></p>
 
     </form>
-    @if (Model.numberSel == "Тонна")
-    {
-        <label for="Value">Тонна: </label>
-    }
+ 
     <!-- вывод ответа -->
     @if (Model.Value != null || Model.Value2 != null || Model.Value3 != null ||
     Model.Value4 != null || Model.Value5 != null)
     {
+        <p>Тонна: @Model.Value</p>
         <p>Центнер: @Model.Value2</p>
         <p>Карат: @Model.Value3</p>
         <p>Шекель: @Model.Value4</p>
         <p>Фунт: @Model.Value5</p>
-
+        <option value="numberSel"></option>
     }
 </body>

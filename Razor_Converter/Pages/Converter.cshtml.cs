@@ -9,7 +9,7 @@ namespace Razor_Converter.Pages
     public class ConverterModel : PageModel
     {
         [BindProperty]
-        public string numberSel { get; set; } = "Тонна";
+        public string? numberSel { get; set; }
         public double Value { get; private set; }
         public double Value2 { get; private set; }
         public double Value3 { get; private set; }
@@ -22,7 +22,7 @@ namespace Razor_Converter.Pages
             //Value = 0;
         }
         
-        public void OnPost(double number, double number2, double number3, double number4)
+        public void OnPost(double number)
         {
             // 1 Тонна — 106(1 000 000) граммов, или 1000 килограммов.
             // 2 Центнер — 105(100 000) граммов, или 100 килограммов.
@@ -35,13 +35,48 @@ namespace Razor_Converter.Pages
             Value = number;
            if(numberSel == "Тонна")
             {
-                Value2 = (number / 10);
+                //Value = number;
+                Value2 = (number * 10);
                 Value3 = (number / 0.0000002);
                 Value4 = (number / 0.000014);
-                Value5 = (number / 0.0000453);
+                Value5 = (number / 0.000453);
             }
-            else { 
-            // полученный результат записывается в модель представления
+            else if (numberSel == "Центнер")
+            {
+                Value = (number / 10);
+                Value2 = (number);
+                Value3 = (number * 500000);
+                Value4 = (number * 7142.85);
+                Value5 = (number * 220.7);
+            }
+            else if (numberSel == "Карат")
+            {
+                Value =(number / 5000000);
+                Value2 = (number / 500000);
+                Value3 = (number );
+                Value4 = (number / 70);
+                Value5 = (number / 2267.96185);
+            }
+            else if (numberSel == "Шекель")
+            {
+                Value = (number / 71.428571);
+                Value2 = (number/ 714.28571);
+                Value3 = (number * 70);
+                Value4 = (number );
+                Value5 = (number * 0.0308647167058829);
+            }
+            else if (numberSel == "Фунт")
+            {
+                Value = (number * 0.000453);
+                Value2 = (number * 0.00453);
+                Value3 = (number *2265);
+                Value4 = (number* 32.399);
+                Value5 = (number);
+            }
+            else
+            {
+                // по умолчанию граммы
+            Value = (number/1000000);
             Value2 = (number / 100000 );
             Value3 = (number / 0.2);
             Value4 = (number / 14);
