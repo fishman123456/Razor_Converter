@@ -77,12 +77,11 @@ namespace Razor_Converter.Pages
             }
             else
             {
-                // по умолчанию граммы
-                Value = (number / 1000000);
-                Value2 = (number / 100000);
-                Value3 = (number / 0.2);
-                Value4 = (number / 14);
-                Value5 = (number / 453.59237);
+            Value = (number/1000000);
+            Value2 = (number / 100000 );
+            Value3 = (number / 0.2);
+            Value4 = (number / 14);
+            Value5 = (number / 453.59237);
                 numberSel = "Грамм";
             }
             numberInt = number;
