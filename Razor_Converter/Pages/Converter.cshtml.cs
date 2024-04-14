@@ -9,7 +9,7 @@ namespace Razor_Converter.Pages
     public class ConverterModel : PageModel
     {
         [BindProperty]
-        public string? numberSel { get; set; }
+        public string numberSel { get; set; } = "ֳנאלל";
         public double Value { get; private set; }
         public double Value2 { get; private set; }
         public double Value3 { get; private set; }
@@ -81,6 +81,7 @@ namespace Razor_Converter.Pages
             Value3 = (number / 0.2);
             Value4 = (number / 14);
             Value5 = (number / 453.59237);
+                numberSel = "ֳנאלל";
             }
         }
     }

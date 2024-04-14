@@ -36,14 +36,18 @@
     </form>
  
     <!-- вывод ответа -->
+
     @if (Model.Value != null || Model.Value2 != null || Model.Value3 != null ||
     Model.Value4 != null || Model.Value5 != null)
     {
+        <h3>Конвертируем из:  @Model.numberSel</h3>
+    
+
         <p>Тонна: @Model.Value</p>
         <p>Центнер: @Model.Value2</p>
         <p>Карат: @Model.Value3</p>
         <p>Шекель: @Model.Value4</p>
         <p>Фунт: @Model.Value5</p>
-        <option value="numberSel"></option>
     }
+   
 </body>
