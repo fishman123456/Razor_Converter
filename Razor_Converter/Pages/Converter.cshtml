@@ -21,7 +21,7 @@
     *@
     <form method="post" action="Converter">
         <label for="Value">Значение выпадающего списка </label>
-        <input id="Value" name="number" type="number" min="0" value="@Model.numberSel" />
+        <input id="Value" name="number" type="number" min="0.00" placeholder="значение" step="any" value="@Model.numberInt" />
         <select name="numberSel">
             <option value="">Конвертация из грамм</option>
             <option value="Тонна">Тонна</option>

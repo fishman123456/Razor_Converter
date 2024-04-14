@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using System.Text;
+
 namespace Razor_Converter.Pages
 {
     [IgnoreAntiforgeryToken]
@@ -34,7 +36,17 @@ namespace Razor_Converter.Pages
 
 
             // вычисления (по факту тут обращааемся к алгоритмам)
-            Value = number;
+           
+            //string str = numberStr.ToString();
+            //StringBuilder strB = new StringBuilder();
+            //foreach (char c in str)
+            //{ 
+                
+            //    if(c == ',') { strB.Append("."); }
+            //    strB.Append(c);
+            //}
+
+             Value = number;
             if (numberSel == "Тонна")
             {
                 //Value = number;
