@@ -13,7 +13,7 @@ namespace Razor_Converter.Pages
         [BindProperty]
         public string numberSel { get; set; } = "ֳנאלל";
         [BindProperty]
-        public double numberInt { get; set; } = 0.00;
+        public double numberInt { get; set; } = 0;
         public double Value { get; private set; }
         public double Value2 { get; private set; }
         public double Value3 { get; private set; }
